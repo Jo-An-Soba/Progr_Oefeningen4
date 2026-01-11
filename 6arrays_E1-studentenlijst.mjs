@@ -1,18 +1,30 @@
 import * as readline from 'node:readline/promises';
-import{stdin as input, stdout as output} from 'node:process';
-const userInput = readline.createInterface({input, output});
+import { stdin as input, stdout as output } from 'node:process';
+const userInput = readline.createInterface({ input, output });
 
-let array = [];
+/*let straal = parseFloat(await userInput.question("straal? "))
 
-let namen = await userInput.question("Geef lijst namen op: ")
-array.push(namen)
-
-while (namen != ""){
-namen = await userInput.question("Geef lijst namen op: ")
-array.push(namen)
-
+function circel(straal) {
+    return Math.PI * straal
 }
+let oppCircel = circel(straal);
+console.log(oppCircel)*/
 
-console.log(array)
+
+let lijstNamen = [];
+
+let naam = await userInput.question("Geef lijst namen op. Druk ENTER om lijst af te printen. ")
+lijstNamen.push(naam)
+
+while(naam != "")
+     {
+        naam = await userInput.question("Geef lijst namen op: ")
+        lijstNamen.push(naam)
+        
+    }  
+        console.log(lijstNamen)
+
+
+
 
 process.exit();
